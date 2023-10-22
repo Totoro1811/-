@@ -32,8 +32,8 @@ logging:
         controller: info #表现层日志级别为INFO
 sky:
   wechat:
-    appid: wx******8d  # 小程序的Id
-    secret: d6d*****  # 小程序的秘钥
+    appid: wx8d2********afa # 小程序的Id
+    secret: d6d3********41a1a799 # 小程序的秘钥
 
   jwt:
     admin-secret-key: itcast # 声明JWT令牌(商家端)部分(3)生成密钥
@@ -43,7 +43,7 @@ sky:
     user-ttl: 7200000 # 声明JWT令牌(客户端)默认过期时间(2小时)
     user-token-name: authentication # 声明小程序端默认提交的请求头中的令牌头名称
   alioss:
-    endpoint: oss-cn-beijing.aliyuncs.com # 阿里云Oss桶的地域地址
-    access-key-id: LT**********53 # 阿里云Oss的访问秘钥
-    access-key-secret: Xtsy***************hP3bwm #阿里云Oss的访问秘钥密码
-    bucket-name: c*******0 # 阿里云Oss的桶名称
+    endpoint: oss-cn**iyuncs.com # 阿里云Oss桶的地域地址
+    access-key-id: LTAI*********J*b7mhz53 # 阿里云Oss的访问秘钥
+    access-key-secret: Xtsy****782*9****lp7hP3bwm #阿里云Oss的访问秘钥密码
+    bucket-name: c***10 # 阿里云Oss的桶名称
