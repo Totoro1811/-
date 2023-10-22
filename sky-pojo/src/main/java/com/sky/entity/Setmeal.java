@@ -1,0 +1,43 @@
+package com.sky.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+/**
+ * 套餐信息存储类
+ */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Setmeal implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    //套餐Id
+    private Long id;
+    //套餐关联分类Id
+    private Long categoryId;
+    //套餐名称
+    private String name;
+    //套餐价格
+    private BigDecimal price;
+    //状态 0:停用 1:启用
+    private Integer status;
+    //套餐描述信息
+    private String description;
+    //套餐图片
+    private String image;
+
+    private LocalDateTime createTime;
+
+    private LocalDateTime updateTime;
+
+    private Long createUser;
+
+    private Long updateUser;
+}
