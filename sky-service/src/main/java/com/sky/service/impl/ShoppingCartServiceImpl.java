@@ -96,4 +96,18 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         //调用持久层将要清空的购物车信息的用户Id作为参数传递
         shoppingCartMapper.cleanShoppingCart(BaseContext.getCurrentId());
     }
+
+    //sub
+    @Override
+    public void substanceShoppingCart(ShoppingCartDTO shoppingCartDTO) {
+        ShoppingCart shoppingCart = new ShoppingCart();
+        BeanUtils.copyProperties(shoppingCartDTO,shoppingCart);
+        shoppingCart.setUserId(BaseContext.getCurrentId());
+        List<ShoppingCart> shoppingCartList = shoppingCartMapper.selectShoppingCart(shoppingCart);
+        ShoppingCart shoppingCartChecked = shoppingCartList.get(0);
+        if (shoppingCartChecked.getNumber()>1){
+            shoppingCartChecked.setNumber(shoppingCartChecked.getNumber() - 1);
+            shoppingCartMapper.updateShoppingCartNumber(shoppingCartChecked);
+        }else shoppingCartMapper.deleteShoppingCart(shoppingCartChecked);
+    }
 }
