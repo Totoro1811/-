@@ -45,4 +45,18 @@
         FROM shopping_cart
         WHERE user_id = #{userId,jdbcType=BIGINT}
     </delete>
+
+         <delete id="deleteShoppingCart">
+        delete from shopping_cart  <where>
+        <if test="shoppingCart.dishId != null">
+            and dish_id = #{shoppingCart.dishId}
+        </if>
+        <if test="shoppingCart.setmealId != null">
+            and setmeal_id = #{shoppingCart.setmealId}
+        </if>
+        <if test="shoppingCart.dishFlavor != null">
+            and dish_flavor = #{shoppingCart.dishFlavor}
+        </if>
+    </where>
+    </delete>
 </mapper>
