@@ -43,4 +43,6 @@ public interface ShoppingCartMapper {
      * @param userId 当前登录用户Id
      */
     void cleanShoppingCart(@Param("userId") Long userId);
+
+    void deleteShoppingCart(@Param("shoppingCart") ShoppingCart shoppingCartChecked);
 }
